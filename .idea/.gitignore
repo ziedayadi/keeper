@@ -1,0 +1,45 @@
+# Maven
+target/
+.checkstyle/
+
+# Intellij
+*.iml
+*.log
+.idea/
+
+# VS Code
+.vscode/
+.factorypath
+
+# Eclipse
+.project
+.classpath
+.springBeans/
+.settings/
+.metadata/
+target-ide/
+.pydevproject
+
+# Scala IDE
+.cache-main
+.cache-tests/
+
+# Sonar
+.sonar
+.sonar_lock
+
+#JRebel
+*rebel.xml
+
+#JMeter
+*Dev.jmx
+
+#GIT technical
+*.orig
+
+#Etoil
+etoil-agences-webapp/etoil-agences-webapp-devis/export/
+http/
+
+#Mac OS
+*.DS_Store
