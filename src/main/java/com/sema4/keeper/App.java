@@ -1,40 +1,22 @@
 package com.sema4.keeper;
 
 import java.awt.*;
-import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 
-import static java.time.temporal.ChronoUnit.DAYS;
-import static java.time.temporal.ChronoUnit.HOURS;
-import static java.time.temporal.ChronoUnit.MINUTES;
-import static java.time.temporal.ChronoUnit.SECONDS;
-
 public class App {
 
     public static void main(String[] args) throws InterruptedException, AWTException {
-
-        int durationSeconds = 10;
-
         LocalDateTime start = LocalDateTime.now();
         System.out.println("Keeper started at : " + start.format(DateTimeFormatter.ISO_DATE_TIME));
 
         while (true) {
-            Duration duration = Duration.between(start, LocalDateTime.now());
-            System.out.print("Elapsed duration : " + prettyDuration(duration) + "\r");
             moveCursorInLine();
         }
 
     }
 
-    private static String prettyDuration(Duration duration) {
-        return String.format("%s d %sh %sm %ss",
-                duration.get(DAYS),
-                duration.get(HOURS),
-                duration.get(MINUTES),
-                duration.get(SECONDS));
-    }
     private static void moveCursorInLine() throws AWTException, InterruptedException {
         int halfRevolution = 500;
 
