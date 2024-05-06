@@ -5,6 +5,10 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+
+import static java.time.temporal.ChronoUnit.DAYS;
+import static java.time.temporal.ChronoUnit.HOURS;
+import static java.time.temporal.ChronoUnit.MINUTES;
 import static java.time.temporal.ChronoUnit.SECONDS;
 
 public class App {
@@ -26,10 +30,10 @@ public class App {
 
     private static String prettyDuration(Duration duration) {
         return String.format("%s d %sh %sm %ss",
-                duration.toDaysPart(),
-                duration.toHoursPart(),
-                duration.toMinutesPart(),
-                duration.toSecondsPart());
+                duration.get(DAYS),
+                duration.get(HOURS),
+                duration.get(MINUTES),
+                duration.get(SECONDS));
     }
     private static void moveCursorInLine() throws AWTException, InterruptedException {
         int halfRevolution = 500;
